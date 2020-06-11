@@ -1,4 +1,26 @@
 {% extends "notas/base.html" %}
 {% block content %}
 {% csrf_token %}
+
+<div class="card text-center" style="background-color: #3b6978">
+  <div class="card-body">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Codigo</th>
+          <th scope="col">Pais</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pais in paises %}
+        <tr>
+          <td>{{ pais.codigo }}</td>
+          <td>{{ pais.nombre }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
 {% endblock content %}

@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-primary mb-4" style="background-color: #3b6978 !important;">
+	<div class="container">
+		{% if user.is_authenticated %}
+		<a class="nav-item" style="color: #e7dfd5">Bienvenido, {{ user.username }}</a>
+		{% endif %}
+		<div class="navbar-nav">
+			{% if user.is_authenticated %}
+			<a class="nav-item nav-link btn btn-dark" href="{% url 'logout' %}" style="color: #e7dfd5">Cerrar sesión</a>
+			{% else %}
+			<a class="nav-item nav-link" href="{% url 'login' %}" >Iniciar sesión</a>
+			{% endif %}
+		</div>
+	</div>
+</nav>

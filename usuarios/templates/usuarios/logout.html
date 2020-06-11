@@ -1,9 +1,7 @@
 {% extends "notas/base.html" %}
 {% block content %}
-  <h2>You have been logged out</h2>
-  <div class="border-top pt-3">
-    <small class="text-muted">
-      <a href="{% url 'login' %}">Log In Again</a>
-    </small>
-  </div>
+<h2 class="text-center" style="color: #204051">Has cerrado sesión satisfactoriamente</h2>
+<div class="border-top pt-4">
+  <a href="{% url 'login' %}" class="btn btn-outline-info" type="submit">Iniciar sesión de nuevo</a>
+</div>
 {% endblock content %}
