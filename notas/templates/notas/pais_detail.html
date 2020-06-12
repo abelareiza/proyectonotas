@@ -1,0 +1,12 @@
+{% extends "notas/base.html" %}
+{% block content %}
+{% csrf_token %}
+<div class="card text-center" style="background-color: #3b6978">
+    <h2 class="article-title">País: {{ pais.nombre }}</h2>
+    <p class="article-content">Código: {{ pais.codigo }}</p>
+</div>
+<div>
+    <a class="btn btn-secondary btn-sml mt-1 mb-1" href="{% url 'pais-update' object.codigo %}">Modificar</a>
+    <a class="btn btn-danger btn-sml mt-1 mb-1" href="{% url 'pais-delete' object.codigo %}">Eliminar</a>
+</div>
+{% endblock content %}

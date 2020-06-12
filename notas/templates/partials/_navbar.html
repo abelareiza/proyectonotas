@@ -1,13 +1,14 @@
 <nav class="navbar navbar-dark bg-primary mb-4" style="background-color: #3b6978 !important;">
 	<div class="container">
 		{% if user.is_authenticated %}
-		<a class="nav-item" style="color: #e7dfd5">Bienvenido, {{ user.username }}</a>
+		<a style="color: #e7dfd5">Bienvenido, {{ user.username }}</a>
 		{% endif %}
 		<div class="navbar-nav">
 			{% if user.is_authenticated %}
-			<a class="nav-item nav-link btn btn-dark" href="{% url 'logout' %}" style="color: #e7dfd5">Cerrar sesión</a>
+			<a class="nav-item nav-link" href="{% url 'pais-create' %}">Añadir país</a>
+			<a class="nav-item nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
 			{% else %}
-			<a class="nav-item nav-link" href="{% url 'login' %}" >Iniciar sesión</a>
+			<a class="text-center" style="color: #e7dfd5">Proyecto notas. UCO 2020-1</a>
 			{% endif %}
 		</div>
 	</div>
