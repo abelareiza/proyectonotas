@@ -1,12 +1,14 @@
 {% extends "notas/base.html" %}
 {% block content %}
 {% csrf_token %}
-<div class="card text-center" style="background-color: #3b6978">
-    <h2 class="article-title">País: {{ pais.nombre }}</h2>
-    <p class="article-content">Código: {{ pais.codigo }}</p>
-</div>
-<div>
-    <a class="btn btn-secondary btn-sml mt-1 mb-1" href="{% url 'pais-update' object.codigo %}">Modificar</a>
-    <a class="btn btn-danger btn-sml mt-1 mb-1" href="{% url 'pais-delete' object.codigo %}">Eliminar</a>
+<div style="padding-top: 65px">
+    <div class="card text-center" style="background-color: #FF8863; padding-top: 15px; padding-bottom: 15px;">
+        <h2 class="article-title" style="color: white; font-weight: bold">País: {{ pais.nombre }}</h2>
+        <h4 class="article-content"style="color: white; font-weight: bold">Código: {{ pais.codigo }}</h4>
+    </div>
+    <div class="text-center" style="padding-top: 15px">
+        <a class="btn btn-outline-secondary" href="{% url 'pais-update' object.codigo %}">Modificar</a>
+        <a class="btn btn-outline-danger" href="{% url 'pais-delete' object.codigo %}">Eliminar</a>
+    </div>
 </div>
 {% endblock content %}
