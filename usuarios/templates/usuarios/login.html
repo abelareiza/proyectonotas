@@ -1,14 +1,13 @@
 {% extends "notas/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <div class="content-section">
+  <div class="content-section" style="padding-top: 30px;">
     <form method="POST">
       {% csrf_token %}
       <fieldset class="form-group">
-        <legend class="border-bottom mb-4" style="color: #204051">Iniciar sesión</legend>
         {{ form|crispy }}
       </fieldset>
-      <div class="form-group">
+      <div class="form-group text-center">
         <button class="btn btn-outline-info" type="submit">Ingresar</button>
       </div>
     </form>
