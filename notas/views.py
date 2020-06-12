@@ -10,7 +10,7 @@ from django.views.generic import (
 )
 from .models import Pais
 
-class PaisListView(ListView):
+class PaisListView(LoginRequiredMixin, ListView):
   model = Pais
   template_name = 'notas/home.html'
   context_object_name = 'paises'
@@ -26,7 +26,11 @@ class PaisCreateView(LoginRequiredMixin, CreateView):
 class PaisUpdateView(LoginRequiredMixin, UpdateView):
   model = Pais
   fields = ['nombre', 'codigo']
+  success_url = '/action_confirm/'
 
 class PaisDeleteView(LoginRequiredMixin, DeleteView):
   model = Pais
-  success_url = '/'
+  success_url = '/action_confirm/'
+
+def action_confirm(request):
+  return render(request, 'notas/action_confirm.html')
